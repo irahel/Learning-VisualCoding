@@ -23,7 +23,7 @@ const sketch = ({ context, width, height }) => {
     for (let i = 0; i < agents.length; i++){
       const agent = agents[i];
 
-      for (let j = 0; j < agents.length; j++){
+      for (let j = i+1; j < agents.length; j++){
 
         const other = agents[j];
         if( random.range(0,1) <= 0.5) context.strokeStyle = agent.color;

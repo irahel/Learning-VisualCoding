@@ -3,7 +3,8 @@ const math = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
 const settings = {
-  dimensions: [ 1080, 1080 ]
+  dimensions: [ 1080, 1080 ],
+  animate: true
 };
 
 const sketch = () => {
@@ -12,7 +13,7 @@ const sketch = () => {
     context.fillRect(0, 0, width, height);
 
     context.fillStyle = 'black';
-    
+
     const cx = width * 0.5;
     const cy = width * 0.5;
     const w = width * 0.01;
@@ -33,14 +34,14 @@ const sketch = () => {
 
       context.save();
       context.fillStyle = `rgba(
-        ${random.range(0,250)}, 
-        ${random.range(0,250)}, 
+        ${random.range(0,250)},
+        ${random.range(0,250)},
         ${random.range(0,250)}, ${random.range(0.5,1)})`;
       context.translate(cx, cy);
       context.translate(x, y);
       context.rotate(-angle);
       context.scale(random.range(0.1, 2), random.range(0.2, 0.5));
-  
+
       context.beginPath();
       context.rect(-w/2 , random.range(0, -h/2), w, h);
       context.fill();
@@ -48,8 +49,8 @@ const sketch = () => {
 
       context.save();
       context.fillStyle = `rgba(
-        ${random.range(0,250)}, 
-        ${random.range(0,250)}, 
+        ${random.range(0,250)},
+        ${random.range(0,250)},
         ${random.range(0,250)}, ${random.range(0.5,1)})`;
       context.translate(cx, cy);
       context.rotate(-angle);
@@ -62,7 +63,6 @@ const sketch = () => {
 
       context.restore();
     }
-    
   };
 };
 
