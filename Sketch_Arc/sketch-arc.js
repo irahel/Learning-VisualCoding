@@ -30,7 +30,12 @@ const sketch = () => {
       x = radius * Math.sin(angle) + i;
       y = radius * Math.cos(angle) + i;
 
+
       context.save();
+      context.fillStyle = `rgba(
+        ${random.range(0,250)}, 
+        ${random.range(0,250)}, 
+        ${random.range(0,250)}, ${random.range(0.5,1)})`;
       context.translate(cx, cy);
       context.translate(x, y);
       context.rotate(-angle);
@@ -42,14 +47,18 @@ const sketch = () => {
       context.restore();
 
       context.save();
+      context.fillStyle = `rgba(
+        ${random.range(0,250)}, 
+        ${random.range(0,250)}, 
+        ${random.range(0,250)}, ${random.range(0.5,1)})`;
       context.translate(cx, cy);
       context.rotate(-angle);
 
       context.lineWidth = random.range(5, 20);
 
       context.beginPath();
-      context.arc(0, 0, random.range(radius *0.7, radius*1.3), slice*random.range(1, -8), slice*random.range(1, 5));
-      context.stroke();
+      context.arc(0-100, 0+100, random.range(radius *0.7, radius*1.3), slice*random.range(1, -8), slice*random.range(1, 5));
+      context.fill();
 
       context.restore();
     }
